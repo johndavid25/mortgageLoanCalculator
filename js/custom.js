@@ -21,7 +21,7 @@ function solution () {
     //Collecting user inputs
     let amountLoaned = parseInt(document.getElementById("loanAmount").value);
     let numMonths = parseInt(document.getElementById("term").value);
-    let rate = parseInt(document.getElementById("interestRate").value);
+    let rate = parseFloat(document.getElementById("interestRate").value);
 
     //Monthly Payments 
     let payment = amountLoaned * (rate / 1200) / (1 - Math.pow ( (1 + rate / 1200 ), -numMonths ));
@@ -45,7 +45,7 @@ function solution () {
     //Chart
     let currentBalance = totalPrinipal;
     let totalInt = 0;
-    
+
 
 
 }
