@@ -12,7 +12,7 @@
   <body>
       <div class="container">
         <div class="row mt-5">
-            <dov class="col-3">
+            <dov class="col-3 border border-dark p-3">
                 <h1>Exodus Bank</h1>
                 <h5>Mortgage Loan Calculater</h5>
                 <br>
@@ -22,10 +22,32 @@
                 <br><br>
                 <button class="btn btn-success" id="solution">Calculate</button>
             </dov>
-            <div class="col-9">
-                
+            <div class="col-6 text-center border border-dark p-1 ml-4">
+                <h1>Your Monthly Payments</h1>
+                <h5 id="monthlyPayments"></h5>
+                <br><br><br>
+                <div class="row">
+                    <div class="col text-left">
+                        <p>Total Principal:</p>
+                        <p>Total Interest:</p>
+                        <p>Total Cost:</p>
+                    </div>
+                    <div class="col text-right">
+                       <p id="totalPrinipal">$25,000.00</p>
+                       <p id="totalInterest">$3,306.85</p>
+                       <p id="totalCost">$28,306.85</p> 
+                    </div>
+                </div>
             </div>
         </div>
+      </div>
+
+      <div class="container">
+          <div class="row">
+              <div class="col-9">
+                
+              </div>
+          </div>
       </div>
 
 
