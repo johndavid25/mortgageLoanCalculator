@@ -17,11 +17,13 @@
                 <h1>Exodus Bank</h1>
                 <h5>Mortgage Loan Calculater</h5>
                 <br>
-                <input class="form-control" type="number" name="loanAmount" id="loanAmount" placeholder="Loan Amount" value="80000">
-                <input class="form-control" type="number" name="term" id="term" placeholder="Term (Months)" value="120">
-                <input class="form-control" type="number" name="interestRate" id="interestRate" placeholder="Interest Rate (Percent)" value="5">
+                <input class="form-control" type="number" name="loanAmount" id="loanAmount" placeholder="Loan Amount">
+                <input class="form-control" type="number" name="term" id="term" placeholder="Term (Months)" >
+                <input class="form-control" type="number" name="interestRate" id="interestRate" placeholder="Interest Rate (Percent)">
                 <br><br>
                 <button class="btn btn-success" id="solution">Calculate</button>
+                <button class="btn btn-secondary" id="default">Default</button>
+                <button class="btn btn-danger" id="clear">Clear</button>
             </dov>
             <div class="col-6 text-center border border-dark p-1 ml-4">
                 <h1>Your Monthly Payments</h1>
@@ -42,7 +44,70 @@
             </div>
         </div>
       </div>
+      <br><br>
+      
+      <div class="container">
+          <div class="row">
+              <div class="col">
+                  <table class="table">
+                      <thead class="thead-dark text-center">
+                        <tr>
+                            <th>Month</th>
+                            <th>Payment</th>
+                            <th>Principal</th>
+                            <th>Interest</th>
+                            <th>Interest Paid</th>
+                            <th>Balance</th>
+                          </tr>
+                      </thead>
+                  </table>
+                  <table class="table table-hover text-center">
+                      <tbody id="table" >
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                      </tbody>
+                  </table>
+              </div>
+          </div>
+      </div>
 
+
+
+           <!-- <div style="overflow-x: auto;">
+        <table id="results">
+
+        </table>
+      </div>
+
+      <script id="template-header" type="text/template">
+        <thead>
+            <tr>
+                <th>Month</th>
+                <th>Payment</th>
+                <th>Principal</th>
+                <th>Interest</th>
+                <th>Interest Paid</th>
+                <th>Balance</th>
+            </tr>
+        </thead>
+      </script>
+      <script id="template-row-items" type="text/template">
+        <tr>
+            <td>{{val1}}</td>
+            <td>{{val2}}</td>
+            <td>{{val3}}</td>
+            <td>{{val4}}</td>
+            <td>{{val5}}</td>
+            <td>{{val6}}</td>
+        </tr>
+      </script>
+      
 
 
 
