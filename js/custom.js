@@ -18,8 +18,6 @@ function clear () {
 
 function solution () {
 
-
-
     //Collecting user inputs
     let amountLoaned = parseInt(document.getElementById("loanAmount").value);
     let numMonths = parseInt(document.getElementById("term").value);
@@ -43,6 +41,11 @@ function solution () {
     let totalCostAmount = amountLoaned + totalInterestAmount;
     let totalCost = totalCostAmount.toFixed(2);
     document.getElementById("totalCost").innerHTML = `$${totalCost} `;
+
+    //Chart
+    let currentBalance = totalPrinipal;
+    let totalInt = 0;
+    
 
 
 }
