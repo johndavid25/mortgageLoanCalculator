@@ -3,8 +3,8 @@ document.getElementById("clear").addEventListener("click", clear);
 document.getElementById("default").addEventListener("click", defualt);
 
 function defualt () {
-    document.getElementById("loanAmount").value = "80000";
-    document.getElementById("term").value = "120";
+    document.getElementById("loanAmount").value = "100000";
+    document.getElementById("term").value = "360";
     document.getElementById("interestRate").value = "5";
 }
 
@@ -17,7 +17,7 @@ function clear () {
 
 
 function solution () {
-    
+
 
 
     //Collecting user inputs
