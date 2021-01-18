@@ -8,6 +8,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/custom.css">
   </head>
   <body>
       <div class="container">
@@ -16,16 +17,16 @@
                 <h1>Exodus Bank</h1>
                 <h5>Mortgage Loan Calculater</h5>
                 <br>
-                <input class="form-control" type="number" name="loanAmount" id="loanAmount" placeholder="Loan Amount">
-                <input class="form-control" type="number" name="term" id="term" placeholder="Term (Months)">
-                <input class="form-control" type="number" name="interestRate" id="interestRate" placeholder="Interest Rate">
+                <input class="form-control" type="number" name="loanAmount" id="loanAmount" placeholder="Loan Amount" value="80000">
+                <input class="form-control" type="number" name="term" id="term" placeholder="Term (Months)" value="120">
+                <input class="form-control" type="number" name="interestRate" id="interestRate" placeholder="Interest Rate (Percent)" value="5">
                 <br><br>
                 <button class="btn btn-success" id="solution">Calculate</button>
             </dov>
             <div class="col-6 text-center border border-dark p-1 ml-4">
                 <h1>Your Monthly Payments</h1>
-                <h5 id="monthlyPayments"></h5>
-                <br><br><br>
+                <h6 id="monthlyPayments"></h6>
+                <br><br>
                 <div class="row">
                     <div class="col text-left">
                         <p>Total Principal:</p>
@@ -33,26 +34,14 @@
                         <p>Total Cost:</p>
                     </div>
                     <div class="col text-right">
-                       <p id="totalPrinipal">$25,000.00</p>
-                       <p id="totalInterest">$3,306.85</p>
-                       <p id="totalCost">$28,306.85</p> 
+                       <p id="totalPrinipal">$0.00</p>
+                       <p id="totalInterest">$0.00</p>
+                       <p id="totalCost">$0.00</p> 
                     </div>
                 </div>
             </div>
         </div>
       </div>
-
-      <div class="container">
-          <div class="row">
-              <div class="col-9">
-                
-              </div>
-          </div>
-      </div>
-
-
-
-
 
 
 
@@ -62,5 +51,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="/js/custom.js"></script>
   </body>
 </html>
