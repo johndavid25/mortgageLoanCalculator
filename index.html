@@ -1,90 +1,338 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Exodus Bank</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/custom.css">
-    <link rel="stylesheet" href="/css/prism.css">
-  </head>
-  <body>
-      <div class="container">
-        <div class="row mt-5">
-            <dov class="col-3 border border-dark p-3">
-                <h1>Exodus Bank</h1>
-                <h5>Mortgage Loan Calculater</h5>
-                <br>
-                <input class="form-control" type="number" name="loanAmount" id="loanAmount" placeholder="Loan Amount"><br>
-                <input class="form-control" type="number" name="term" id="term" placeholder="Term (Months)" ><br>
-                <input class="form-control" type="number" name="interestRate" id="interestRate" placeholder="Interest Rate (Percent)"><br>
-                <br><br>
-                <button class="btn btn-success" id="solution">Calculate</button>
-                <button class="btn btn-secondary" id="default">Default</button>
-                <button class="btn btn-danger" id="clear">Clear</button>
-            </dov>
-            <div class="col-6 text-center border border-dark p-1 ml-4">
-                <h1>Your Monthly Payments</h1>
-                <h6 id="monthlyPayments"></h6>
-                <br><br>
-                <div class="row">
-                    <div class="col text-left">
-                        <p>Total Principal:</p>
-                        <p>Total Interest:</p>
-                        <p>Total Cost:</p>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Mortage Loan</title>
+        <link rel="icon" type="image/x-icon" href="/img/bankIcon.png" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <link rel="stylesheet" href="/css/prism.css">
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="/img/bankIcon.png" alt="" /></a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars ml-1"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav text-uppercase ml-auto">
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">Description</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Calculator</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Code</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">Source</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container" >
+                <div style="color: #212121;" class="masthead-subheading"></div>
+                <div style="color: #212121;" class="masthead-heading text-uppercase">Mortgage Loan Calculator</div>
+                <a class="btn btn-light btn-xl text-uppercase js-scroll-trigger" href="#services">Get Started</a>
+            </div>
+        </header>
+        <!-- Description-->
+        <section class="page-section" id="services">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Calculating Payments</h2>
+                    <h3 class="section-subheading text-muted">Mortgage calculators are automated tools that enable users to 
+                        determine the financial implications of changes in one or more variables in a mortgage financing arrangement  <br><br>
+                        This program was made using JavaScript, HTML, CSS, and Bootstrap 4.</h3>
+                </div>
+                <div class="row text-center">
+                    <div class="col">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-dark"></i>
+                            <i class="fab fa-js-square fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <h4 class="my-3">JavaScript</h4>
                     </div>
-                    <div class="col text-right">
-                       <p id="totalPrinipal">$0.00</p>
-                       <p id="totalInterest">$0.00</p>
-                       <p id="totalCost">$0.00</p> 
+                    <div class="col">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-dark"></i>
+                            <i class="fab fa-html5 fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <h4 class="my-3">HTML</h4>
+                    </div>
+                    <div class="col">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-dark"></i>
+                            <i class="fab fa-css3-alt fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <h4 class="my-3">CSS</h4>
+                    </div>
+                    <div class="col">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-dark"></i>
+                            <i class="fab fa-bootstrap fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <h4 class="my-3">Bootstrap 4</h4>
                     </div>
                 </div>
             </div>
-        </div>
-      </div>
-      
-      <div class="container">
-        <div class="row mt-5">
-          <div class="col">
-              <table id="scheduleTable" class="table table-striped table-hover">
-                  <thead id="tableheader" class="bg-dark text-white">
-                      <tr>
-                          <th>Month</th>
-                          <th>Payment</th>
-                          <th>Principal</th>
-                          <th>Interest</th>
-                          <th>Total Interest</th>
-                          <th>Balance</th>
-                      </tr>
-                  </thead>
-                  <tbody id="scheduleBody">
-                     
-                  </tbody>
-              </table>
-          </div>
-      </div>
-      </div>
+        </section>
+        <!-- Solve Grid-->
+        <section class="page-section bg-light" id="portfolio">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Calculator</h2>
+                    <h3 class="section-subheading text-muted">Enter a loan amount, terms, and interest rate. Click "Calculate" to
+                        to find out your monthly payments and monthly amortization schedule
+                    </h3>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="loanAmount">Loan Amount:</label>
+                            <input class="form-control" type="number" id="loanAmount">
+                        </div>
+                        <div class="form-group">
+                            <label for="loanTerm">Payments:</label>
+                            <input class="form-control" type="number" id="loanTerm">
+                        </div>
+                        <div class="form-group">
+                            <label for="loanRate">Rate:</label>
+                            <input class="form-control" type="number" id="loanRate">
+                        </div>
+                        <div class="form-group">
+                            <button id="btnCalc" type="submit" class="btn btn-dark float-right">Calculate</button>
+                        </div>
+                    </div>
+                    <div class="col loanInfo">
+                        <div id="paymentTitle">
+                            <h4 class="text-center">Your Monthly Payments</h4>
+                        </div>
+                        <h5 class="text-center" id="payment"></h5><br>
+                        <div class="row">
+                            <div class="col">
+                                <label class="text-left">Total Principcal:</label>
+                            </div>
+                            <div class="col text-right" id="totalPrincipal"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <label class="text-left">Total Interest:</label>
+                            </div>
+                            <div class="col text-right" id="totalInterest"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <label class="text-left">Total Cost:</label>
+                            </div>
+                            <div class="col text-right" id="totalCost"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3 justify-content-center">
+                    <div class="accordion" id="accordionExample">
+                        <div class="card">
+                          <div class="card-header" id="headingOne">
+                            <h2 class="mb-0">
+                              <button class="btn btn-block text-center" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Monthly Amortization Schedule
+                              </button>
+                            </h2>
+                          </div>
+                      
+                          <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                            <div class="card-body">
+                              <div class="row">
+                                <div class="col">
+                                    <table id="scheduleTable" class="table table-striped table-hover">
+                                        <thead id="tableheader" class="bg-dark text-white">
+                                            <tr>
+                                                <th>Month</th>
+                                                <th>Payment</th>
+                                                <th>Principal</th>
+                                                <th>Interest</th>
+                                                <th>Total Interest</th>
+                                                <th>Balance</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="scheduleBody">
+                    
+                                        </tbody>
+                                    </table>
+                                </div>
+                              </div> 
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            
 
-      
-      
-      
+            
+            
+        </section>
+        <!-- Code-->
+        <section class="page-section" id="about">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Code</h2>
+                    <h3 class="section-subheading text-muted">Mortgage Calculator JavaScript</h3>
+                </div>
+<pre class="line-numbers">
+    <code class="language-javascript">
+        //Wire up our button
+document.getElementById("btnCalc").addEventListener("click", buildSchedule);
 
-      
+document.getElementById("scheduleTable").style.visibility = "hidden";  
 
+//Calculate the loan payment
+function calcPayment(amount, rate, term) {
+    return (amount * rate) / (1 - Math.pow(1 + rate, -term));
+}
 
+//Calcuate the interest for the current balance of the loan
+function calcInterest(balance, rate) {
+    return balance * rate;
+}
 
-        
+//this function will build our loan schedule
+function buildSchedule() {
     
+    //Make the table visible I don't want the table show unless there are values
+    document.getElementById("scheduleTable").style.visibility = "visible";    
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="/js/custom.js"></script>
-    <script src="/js/prism.js"></script>
-  </body>
+
+    //Get the values from out inputs
+    let amount = document.getElementById("loanAmount").value;
+    let rate = document.getElementById("loanRate").value;
+    let term = document.getElementById("loanTerm").value;
+
+    //Convert the input rate to a monthly rate
+    rate = rate / 1200;
+
+    //Calulate the payments
+
+    //setup some variables that hold values in the schedule
+    let payment = calcPayment(amount, rate, term);
+    let balance = amount;
+    let totalInterest = 0;
+    let monthlyPrincipal = 0;
+    let monthlyInterest = 0;
+    let monthlyTotalInterest = 0;
+
+    //Write the results to our table
+    let scheduleBody = document.getElementById("scheduleBody");
+    let scheduleRow = "";
+    //reset the table
+    scheduleBody.innerHTML = "";
+
+    for (month = 1; month <= term; month++) {
+
+        monthlyInterest = calcInterest(balance, rate);
+        totalInterest += monthlyInterest;
+        monthlyPrincipal = payment - monthlyInterest;
+        balance = balance - monthlyPrincipal;
+
+        //Write these values to the table
+        scheduleRow = `<tr><td>${month}</td>
+        <td>${payment.toFixed(2)}</td>
+        <td>${monthlyPrincipal.toFixed(2)}</td>
+        <td>${monthlyInterest.toFixed(2)}</td>
+        <td>${totalInterest.toFixed(2)}</td>
+        <td>${balance.toFixed(2)}</td>
+        </tr>`;
+
+        scheduleBody.innerHTML += scheduleRow;
+    }
+
+    document.getElementById("payment").innerHTML = Number(payment).toLocaleString("en-US", {
+        style: "currency",
+        currency: "USD",
+    });
+
+    document.getElementById("totalPrincipal").innerHTML = Number(amount).toLocaleString("en-US", {
+        style: "currency",
+        currency: "USD",
+    });
+
+    document.getElementById("totalInterest").innerHTML = Number(totalInterest).toLocaleString("en-US", {
+        style: "currency",
+        currency: "USD",
+    });
+
+    let totalCost = Number(amount) + totalInterest;
+
+    document.getElementById("totalCost").innerHTML = Number(totalCost).toLocaleString("en-US", {
+        style: "currency",
+        currency: "USD",
+    });
+
+}
+    </code>
+</pre>                
+       
+            </div>
+        </section>
+        <!-- Source-->
+        <section class="page-section bg-light" id="team">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Source</h2>
+                    <h3 class="section-subheading text-muted">Please visit my GitHub and Portfolio</h3>
+                </div>
+                <div class="row text-center">
+                    <div class="col">
+                        <a href="https://github.com/johndavid25/mortgageLoanCalculator"target="_blank">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-dark"></i>
+                            <i class="fab fa-github-alt fa-stack-1x fa-inverse"></i>
+                        </span>
+                        </a>
+                        <h4 class="my-3">GitHub</h4>
+                    </div>   
+                    <div class="col">
+                        <a href="https://johndevportfolio.netlify.app" target="_blank">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-dark"></i>
+                            <i class="fas fa-user fa-stack-1x fa-inverse"></i>
+                        </span>
+                        </a>
+                        <h4 class="my-3">Portfolio</h4>
+                    </div>
+                </div>
+                
+            </div> 
+        </section>
+ 
+        <!-- Footer-->
+        <footer class="footer py-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col text-center">Copyright © John Williams 2021</div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <!-- Contact form JS-->
+        <script src="assets/mail/jqBootstrapValidation.js"></script>
+        <script src="assets/mail/contact_me.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <script src="/js/prism.js"></script>
+    </body>
 </html>

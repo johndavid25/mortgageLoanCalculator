@@ -1,20 +1,64 @@
-document.getElementById("solution").addEventListener("click", solution);
-document.getElementById("clear").addEventListener("click", clear);
-document.getElementById("default").addEventListener("click", defualt);
+/*!
+    * Start Bootstrap - Agency v6.0.3 (https://startbootstrap.com/theme/agency)
+    * Copyright 2013-2020 Start Bootstrap
+    * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-agency/blob/master/LICENSE)
+    */
+    (function ($) {
+    "use strict"; // Start of use strict
 
-function defualt () {
-    document.getElementById("loanAmount").value = "100000";
-    document.getElementById("term").value = "360";
-    document.getElementById("interestRate").value = "5";
-}
+    // Smooth scrolling using jQuery easing
+    $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function () {
+        if (
+            location.pathname.replace(/^\//, "") ==
+                this.pathname.replace(/^\//, "") &&
+            location.hostname == this.hostname
+        ) {
+            var target = $(this.hash);
+            target = target.length
+                ? target
+                : $("[name=" + this.hash.slice(1) + "]");
+            if (target.length) {
+                $("html, body").animate(
+                    {
+                        scrollTop: target.offset().top - 72,
+                    },
+                    1000,
+                    "easeInOutExpo"
+                );
+                return false;
+            }
+        }
+    });
+
+    // Closes responsive menu when a scroll trigger link is clicked
+    $(".js-scroll-trigger").click(function () {
+        $(".navbar-collapse").collapse("hide");
+    });
+
+    // Activate scrollspy to add active class to navbar items on scroll
+    $("body").scrollspy({
+        target: "#mainNav",
+        offset: 74,
+    });
+
+    // Collapse Navbar
+    var navbarCollapse = function () {
+        if ($("#mainNav").offset().top > 100) {
+            $("#mainNav").addClass("navbar-shrink");
+        } else {
+            $("#mainNav").removeClass("navbar-shrink");
+        }
+    };
+    // Collapse now if page is not at top
+    navbarCollapse();
+    // Collapse the navbar when page is scrolled
+    $(window).scroll(navbarCollapse);
+})(jQuery); // End of use strict
 
 
-function clear () {
-    document.getElementById("loanAmount").value = "";
-    document.getElementById("term").value = "";
-    document.getElementById("interestRate").value = "";
-}
 
+//Wire up our button
+document.getElementById("btnCalc").addEventListener("click", buildSchedule);
 
 document.getElementById("scheduleTable").style.visibility = "hidden";  
 
@@ -29,7 +73,7 @@ function calcInterest(balance, rate) {
 }
 
 //this function will build our loan schedule
-function solution() {
+function buildSchedule() {
     
     //Make the table visible I don't want the table show unless there are values
     document.getElementById("scheduleTable").style.visibility = "visible";    
@@ -37,8 +81,8 @@ function solution() {
 
     //Get the values from out inputs
     let amount = document.getElementById("loanAmount").value;
-    let rate = document.getElementById("interestRate").value;
-    let term = document.getElementById("term").value;
+    let rate = document.getElementById("loanRate").value;
+    let term = document.getElementById("loanTerm").value;
 
     //Convert the input rate to a monthly rate
     rate = rate / 1200;
@@ -101,6 +145,3 @@ function solution() {
     });
 
 }
-
-
-
